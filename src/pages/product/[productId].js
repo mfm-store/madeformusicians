@@ -69,8 +69,8 @@ const ProductPage = () => {
   };
 
   const handleSendWhatsappMessage = () => {
-    const phoneNumber = 'RECIPIENT_PHONE_NUMBER';  // Replace with the recipient's phone number
-    const message = 'Hello, this is a test message!';  // Replace with your desired message
+    const phoneNumber = '9319905674';  // Replace with the recipient's phone number
+    const message = 'Hi, I am interested in buying this product www.madeformusicians.in/product/123';
 
     const apiUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
@@ -104,7 +104,7 @@ const ProductPage = () => {
           </button>
 
           <button
-            onClick={handleSendWhatsappMessage}
+            onClick={() => { handleSendWhatsappMessage() }}
             className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor2} ${buttonHoverColor2}`}
           >
             Buy on WhatsApp
