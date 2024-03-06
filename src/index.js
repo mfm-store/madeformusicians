@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// pages/index.js
+import Link from 'next/link';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Welcome to Next.js App</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/items">
+              <a>Music Accessories</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default HomePage;
