@@ -1,5 +1,5 @@
 import variantKalimba from "./kalimba";
-import variantCapos from "./capos";
+import variantCapos from "./caposs";
 import CATEGORIES from './categories';
 import variantStraps from './straps'
 
@@ -16,7 +16,7 @@ const products = [
     imageUrl: '/products/capo/silver.jpeg',
     secondaryImageUrls: ['/products/capo/black.jpeg', '/products/capo/grey.jpeg', '/products/capo/gold.jpeg'],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
-    rank: 5,
+    rank: 1,
     productGroudId: 'capo-123',
     category: CATEGORIES.CAPOS,
     variants: variantCapos,
@@ -94,7 +94,7 @@ const products = [
     imageUrl: '/products/tuners/1.jpeg',
     secondaryImageUrls: ['/products/tuners/2.jpeg', '/products/tuners/3.jpeg'],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
-    rank: 1,
+    rank: 5,
     category: CATEGORIES.TUNERS,
   },
   {
@@ -108,7 +108,7 @@ const products = [
     imageUrl: '/products/strings/1.jpeg',
     secondaryImageUrls: ['/products/strings/2.jpeg'],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
-    rank: 1,
+    rank: 6,
     category: CATEGORIES.STRINGS,
   }
 ];
