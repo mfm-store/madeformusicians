@@ -1,6 +1,6 @@
 // pages/_app.js
 import '../styles/global.css';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import FooterComponent from '../components/FooterComponent';
 
 function MyApp({ Component, pageProps }) {
