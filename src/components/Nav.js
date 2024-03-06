@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { primaryBgColor, secondaryTextColor, textColor, hoverTertiaryTextColor } from '../config/theme';
 
 // Define color variables
@@ -18,7 +19,9 @@ const Nav = () => {
     <>
 
       <div className='flex my-2 ml-2'>
-        <img src='/mfmlogo.jpeg' width={55} height={46} className='rounded-full py-xs' />
+        <div className='w-10 h-10 relative'>
+          <Image src='/mfmlogo.jpeg' fill className='rounded-full  py-xs' sizes="50px,50px" />
+        </div>
         <div className='font-bold text-2xl ml-4 flex items-center'>
           Made for Musicians
         </div>

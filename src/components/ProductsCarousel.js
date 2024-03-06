@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import products from '../config/products';
@@ -66,8 +67,8 @@ const ProductCarousel = () => {
       <Slider {...carouselSettings}>
         {featuredProducts.map((product) => (
           <div key={product.id} className="relative p-4 border rounded-md shadow-md h-[300px] cursor-pointer" onClick={() => { onSlideClick(product.id) }}>
-            <img src={product.imageUrl} alt={product.name} className="rounded-md mb-2 h-full w-full object-contain" />
-            <p className={`${textColor} absolute bottom-4 left-4`}>{product.name}</p>
+            <Image fill src={product.imageUrl} alt={product.name} className="rounded-md mb-2 h-full w-full object-contain" sizes='310px,160px' />
+            {/* <p className={`${textColor} absolute bottom-4 left-4`}>{product.name}</p> */}
           </div>
         ))}
       </Slider>

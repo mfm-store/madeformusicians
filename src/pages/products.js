@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import products from "../config/products";
 
@@ -28,11 +29,15 @@ const Products = () => {
               onCardClick(product.id);
             }}
           >
-            <img
-              src={product.imageUrl}
-              alt={product.name}
-              className="mb-4 w-full h-[200px] object-cover"
-            />
+            <div className="relative h-[200px] w-full">
+              <Image
+                fill
+                src={product.imageUrl}
+                alt={product.name}
+                className="mb-4 object-cover"
+                sizes="310px,160px"
+              />
+            </div>
             <p className={`${cardTitleColor} mb-2`}>{product.name}</p>
             <p className={textColor}>{product.price}</p>
           </div>

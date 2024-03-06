@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import products from '../../config/products';
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import ImagesView from '../../components/ImagesView';
 import ProductDescription from '../../components/ProductDescription';
@@ -24,8 +25,8 @@ const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant })
   };
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
-      <div className={`w-16 h-16 bg-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg hover:border border-gray-500 ${variantId === variantFromQueryParams ? 'border-[#DE9151] border' : ''}`} onClick={handleClick}>
-        <img src={imageUrl} alt="Product Thumbnail" className="w-full h-full object-cover" />
+      <div className={`relative w-16 h-16 bg-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg hover:border border-gray-500 ${variantId === variantFromQueryParams ? 'border-[#DE9151] border' : ''}`} onClick={handleClick}>
+        <Image src={imageUrl} fill alt="Product Thumbnail" className="w-full h-full object-cover" sizes="120px,120px" />
       </div>
       <div className='text-black'>{variantLabel}</div>
     </div>

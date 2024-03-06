@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -50,11 +51,11 @@ const WelcomeComponent = () => {
       {isHydrated && (
         <Slider ref={carouselRef} {...carouselSettings}>
           <div className="relative">
-            <img src="/accesories.jpg" alt="Slide 1" className="w-full h-full object-cover" />
+            <Image fill src="/banner/accesories.jpg" />
             <div className={`absolute inset-0 opacity-30 ${primaryColor}`}></div>
           </div>
           <div className="relative">
-            <img src="https://www.musora.com/musora-cdn/image/width=1400,quality=85/https://pianote-blog.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/12/01154056/Untitled-1-01-2400x1350.jpg" alt="Slide 2" className="w-full h-full object-cover" />
+            <img fill src="/banner/guitar.jpg" alt="Slide 2" className="w-full h-full object-cover" />
             <div className={`absolute inset-0 opacity-30 ${primaryColor}`}></div>
           </div>
           {/* Add more slides as needed */}

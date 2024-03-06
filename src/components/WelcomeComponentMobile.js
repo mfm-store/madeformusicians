@@ -15,9 +15,6 @@ const WelcomeComponentMobile = () => {
 
         <div
           className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://cdn.pianodreamers.com/wp-content/uploads/2021/05/guitar-accessories-guide-main@2x.jpg')`,
-          }}
         >
           <div className="absolute inset-0 opacity-60 border-bottom border-dotted border-gray-400 border-4 border-t-0 border-l-0 border-r-0" />
           <div className="absolute inset-0">
