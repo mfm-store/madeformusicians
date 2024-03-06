@@ -1,5 +1,5 @@
 import variantKalimba from "./kalimba";
-import variantCapos from "./caposs";
+import variantCapos from "./capos";
 import CATEGORIES from './categories';
 import variantStraps from './straps'
 
