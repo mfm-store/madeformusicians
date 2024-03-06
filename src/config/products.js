@@ -6,7 +6,7 @@ import variantStraps from './straps'
 const products = [
   {
     id: 123,
-    name: 'Guitar Capo Heavy duty Metal with Pin Remover',
+    name: 'Guitar Capo Heavy duty (Metal) with Pin Remover',
     price: '329',
     description: `
     <li><strong>This Capo is one of the Most Popular QUICK- CHANGE CAPO DESIGNS.</strong> Not only Quickly Change Between Frets; but also can Pull Out the String Nail More Easily</li>
@@ -25,7 +25,7 @@ const products = [
   {
     id: 456,
     name: 'Kalimba',
-    price: '1099',
+    price: '849',
     description: `<li>Kalimba Thumb Piano 17 Keys Finger Piano</li>
     <li>Beautiful polishing natural wood grain piano paint luster smooth feel beautiful sound</li>
     <li>Engraved Notes Hand-rest Curve Design Bending Keys</li>
@@ -42,7 +42,7 @@ const products = [
   {
     id: 123213,
     name: 'Adjustable Woven Guitar Strap Retro Style / Electric Guitar Strap / Electric Guitar Strap / Guitar Player Gift / Bass Guitar Strap',
-    price: '799',
+    price: '999',
     description: `Size: 5*149cm
     <p>
     Brand new and high quality.
@@ -75,7 +75,7 @@ const products = [
   {
     id: 234234,
     name: 'String Cutter Winder',
-    price: '200',
+    price: '249',
     description: 'String Cutter Winder',
     imageUrl: '/products/cutterWinder/1.jpeg',
     secondaryImageUrls: [],
@@ -86,7 +86,7 @@ const products = [
   {
     id: 43534534,
     name: 'Guitar Tuners',
-    price: '399',
+    price: '299',
     description: `<li>Screen: LCD display.</li>
     <li>Tuning type: Guitar, Chromatic, Bass, Violin, Ukulele.</li>
     <li>A4 range: 430Hz--450Hz.</li>
@@ -100,7 +100,7 @@ const products = [
   {
     id: 234555,
     name: 'Guitar Strings',
-    price: '320',
+    price: '299',
     description: `<li>Acoustic Guitar Strings- Made With Highest Quality Phosphor Bronze Wound</li>
     <li>It Owns The Deep & Steady Bass, Clear & Melodious Trebie.</li>
     <li>This Series Have 4 Tensions Which Can Satisfy Defferent Playing Requirements.</li>

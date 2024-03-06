@@ -19,27 +19,15 @@ const WelcomeComponentMobile = () => {
             backgroundImage: `url('https://cdn.pianodreamers.com/wp-content/uploads/2021/05/guitar-accessories-guide-main@2x.jpg')`,
           }}
         >
-          {!isHydrated && (
-            <div className="absolute inset-0 bg-black opacity-75 flex items-center justify-center text-white">
-              {/* Loading state or static content before hydration */}
-              <p>Loading...</p>
+          <div className="absolute inset-0 opacity-60 border-bottom border-dotted border-gray-400 border-4 border-t-0 border-l-0 border-r-0" />
+          <div className="absolute inset-0">
+            <div className="text-left text-black p-4">
+              <p className="text-md mb-4">Discover high-quality accessories to enhance your musical experience.</p>
+              <button className="bg-[#BC5D2E] text-white px-4 py-2 rounded-full font-bold hover:bg-[#DE9151]">
+                <Link href="/products">Explore Now</Link>
+              </button>
             </div>
-          )}
-
-          {isHydrated && (
-            <>
-              <div className="absolute inset-0 opacity-60 border-bottom border-dotted border-gray-400 border-4 border-t-0 border-l-0 border-r-0" />
-              <div className="absolute inset-0">
-                <div className="text-left text-black p-4">
-                  <p className="text-md mb-4">Discover high-quality accessories to enhance your musical experience.</p>
-                  <button className="bg-[#BC5D2E] text-white px-4 py-2 rounded-full font-bold hover:bg-[#DE9151]">
-                    <Link href="/products">Explore Now</Link>
-                  </button>
-                </div>
-
-              </div>
-            </>
-          )}
+          </div>
         </div>
       </div>
     </>

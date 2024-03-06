@@ -7,25 +7,25 @@ const ProductDescription = ({ description }) => {
     setIsExpanded(!isExpanded);
   };
 
-  // Split the description into lines
-  const descriptionLines = description.split('\n');
-
-  // Show only the first three lines if not expanded
-  const visibleLines = isExpanded ? descriptionLines : descriptionLines.slice(0, 3);
-
   return (
-    <div>
-      {/* Render visible lines */}
-      <ul className="text-gray-600 mb-4 flex flex-col list-disc">
-        {visibleLines.map((line, index) => (
-          <li key={index} dangerouslySetInnerHTML={{ __html: line }} />
-        ))}
-      </ul>
+    <div className="max-w-md mb-4">
+      <div
+        className={`text-gray-600 mb-2 flex flex-col list-disc ${isExpanded ? 'h-auto' : 'h-24 overflow-hidden'
+          }`}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
 
-      {/* Render "Show More" button if there are more than 3 lines */}
-      {descriptionLines.length > 3 && (
-        <button onClick={toggleExpand}>
-          {isExpanded ? 'Show Less' : 'Show More'}
+      {/* Render "Show More" button if content is taller than 24px */}
+      {!isExpanded && description?.length > 180 && (
+        <button onClick={toggleExpand} className="text-blue-600 hover:text-blue-800">
+          Show More
+        </button>
+      )}
+
+      {/* Render "Show Less" button if content is expanded */}
+      {isExpanded && (
+        <button onClick={toggleExpand} className="text-blue-600 hover:text-blue-800">
+          Show Less
         </button>
       )}
     </div>

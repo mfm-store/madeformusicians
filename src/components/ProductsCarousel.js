@@ -13,7 +13,7 @@ const hoverColor = hoverTertiaryBgColor;
 const ProductCarousel = () => {
   const router = useRouter();
   // Replace this with actual product data
-  const featuredProducts = products.sort((a, b) => { a.rank - b.rank }).slice(0, 6);
+  const featuredProducts = products.sort((a, b) => { return a.rank - b.rank }).slice(0, 6);
   const CustomPrevArrow = ({ onClick }) => (
     <button
       className={`absolute font-bold top-1/2 left-4 transform -translate-y-1/2 ${tertiaryColor} ${textColor} rounded-full w-[35px] h-[35px] z-10 ${hoverColor} transition duration-300`}

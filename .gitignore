@@ -21,3 +21,18 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Next.js
+.next/
+out/
+.cache/
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env.local
+
+# IDE settings
+.idea/
+.vscode/

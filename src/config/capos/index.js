@@ -3,7 +3,7 @@ import CATEGORIES from '../categories';
 const variantCapos = [
   {
     id: 123,
-    price: '1499',
+    price: '329',
     imageUrl: '/products/capo/black.jpeg',
     secondaryImageUrls: ['/products/capo/1.jpeg', '/products/capo/3.jpeg', '/products/capo/4.jpeg', '/products/capo/5.jpeg'],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',

@@ -87,8 +87,8 @@ const ProductPage = () => {
 
       {/* Right: Product Details */}
       <div className="flex-1 p-4">
-        <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
-        <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{product.price}</p>
+        <h1 className="text-2xl lg:text-4xl font-bold mb-4">{product.name}</h1>
+        <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{variant?.price || product?.price} <span className='font-normal text-2xs'>(includes shipping)</span></p>
         {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} /> : null}
         <ProductDescription description={product.description} />
         {/* <ul className="text-gray-600 mb-4 flex flex-col list-disc" dangerouslySetInnerHTML={{ __html: product.description }} /> */}
