@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import LoadingSpinner from './LoadingSpinner';
 
-const ImagesView = ({ product }) => {
+const ImagesView = ({ product, mainImageLoading, setMainImageLoading }) => {
   const [mainImage, setMainImage] = useState(product.imageUrl);
+
   const [thumbnailImages, setThumbanilImages] = useState([]);
 
   useEffect(() => {
@@ -15,14 +17,21 @@ const ImagesView = ({ product }) => {
 
   const handleThumbnailClick = (imageUrl) => {
     setMainImage(imageUrl);
+    setMainImageLoading(true);
   };
+
+  const onImageLoad = () => {
+    setMainImageLoading(false);
+  };
+
 
   return (
     <div className="flex flex-col">
       {/* Main Image */}
       <div className="flex-1 p-4">
         <div className="relative w-full h-0 pb-9/16 overflow-hidden rounded-md border border-gray-300 ">
-          <Image src={mainImage} fill alt={product.name} className="absolute inset-0 object-cover w-full h-full" sizes="(max-width: 768px) 220px, 220px; (max-width: 1800px) 420px, 420px" />
+          {mainImageLoading ? <LoadingSpinner /> : ""}
+          <Image src={mainImage} fill alt={product.name} className={`${mainImageLoading ? 'invisible' : ''} absolute inset-0 object-cover w-full h-full`} sizes="(max-width: 768px) 220px, 220px; (max-width: 1800px) 420px, 420px" onLoad={onImageLoad} />
         </div>
       </div>
 

@@ -11,7 +11,7 @@ const buttonHoverColor1 = "hover:bg-pink-500";
 const buttonBackgroundColor2 = "bg-green-600";
 const buttonHoverColor2 = "hover:bg-green-500";
 
-const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant }) => {
+const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant, setMainImageLoading }) => {
   const router = useRouter();
   const queryParams = new URLSearchParams(router.query);
   const variantFromQueryParams = queryParams.get('variant') || defaultVariant;
@@ -24,17 +24,18 @@ const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant })
     // Replace the current URL with the updated query parameter
     router.push({ pathname: router.pathname, query: queryParams.toString() });
   };
+
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
       <div className={`relative w-16 h-16 bg-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg hover:border border-gray-500 ${variantId === variantFromQueryParams ? 'border-[#DE9151] border' : ''}`} onClick={handleClick}>
-        <Image src={imageUrl} fill alt="Product Thumbnail" className="w-full h-full object-cover" sizes="60px,60px" />
+        <Image src={imageUrl} fill alt="Product Thumbnail" className="w-full h-full object-cover" sizes="60px,60px" onClick={() => { setMainImageLoading(true) }} />
       </div>
       <div className='text-black'>{variantLabel}</div>
     </div>
   );
 };
 
-const VariantThumbnails = ({ products, defaultVariant }) => {
+const VariantThumbnails = ({ products, defaultVariant, ...rest }) => {
   // useEffect(() => {
   //   products.forEach(() => {
   //     router.prefetch('/dashboard');
@@ -43,7 +44,7 @@ const VariantThumbnails = ({ products, defaultVariant }) => {
   return (
     <div className="flex overflow-x-auto space-x-4 p-4">
       {products.map((product, index) => (
-        <VariantThumbnail key={index} {...product} defaultVariant={defaultVariant} />
+        <VariantThumbnail key={index} {...product} defaultVariant={defaultVariant} {...rest} />
       ))}
     </div>
   );
@@ -52,7 +53,8 @@ const VariantThumbnails = ({ products, defaultVariant }) => {
 const ProductPage = () => {
   const [product, setProduct] = useState({});
   const [variant, setVariant] = useState({});
-  console.log('productis', product);
+  const [mainImageLoading, setMainImageLoading] = useState(true);
+
   const router = useRouter();
   useEffect(() => {
     const { productId } = router.query;
@@ -82,19 +84,21 @@ const ProductPage = () => {
     window.open(apiUrl, '_blank');
   };
 
+  const imageLoadProps = { mainImageLoading: mainImageLoading, setMainImageLoading: setMainImageLoading };
+
   return (
     <div className="flex flex-col lg:flex-row ">
       {/* Left: Zoomable Image */}
 
       <div className="flex-1 p-4">
-        <ImagesView product={variant || product} />
+        <ImagesView product={variant || product} {...imageLoadProps} />
       </div>
 
       {/* Right: Product Details */}
       <div className="flex-1 p-4">
         <h1 className="text-2xl lg:text-4xl font-bold mb-4">{product.name}</h1>
         <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{variant?.price || product?.price} <span className='font-normal text-2xs'>(includes shipping)</span></p>
-        {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} /> : null}
+        {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} {...imageLoadProps} /> : null}
         <ProductDescription description={product.description} />
 
         <div className='flex flex-col md:flex-col-reverse gap-3'>
