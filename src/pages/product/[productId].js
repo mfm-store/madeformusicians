@@ -72,9 +72,9 @@ const ProductPage = () => {
     window.open(`${product.instagramUrl}`, '_blank');
   };
 
-  const handleSendWhatsappMessage = () => {
+  const handleSendWhatsappMessage = (productId, variant) => {
     const phoneNumber = '9319905674';  // Replace with the recipient's phone number
-    const message = 'Hi, I am interested in buying this product www.madeformusicians.in/product/123';
+    const message = `Hi, I am interested in buying this product www.madeformusicians.in/product/${productId}${variant ? `?variant=${variant.variantId}` : ''}`;
 
     const apiUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
@@ -99,7 +99,7 @@ const ProductPage = () => {
 
         <div className='flex flex-col md:flex-col-reverse gap-3'>
           <button
-            onClick={() => { handleSendWhatsappMessage() }}
+            onClick={() => { handleSendWhatsappMessage(product.id, variant) }}
             className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor2} ${buttonHoverColor2}`}
           >
             Buy on WhatsApp
