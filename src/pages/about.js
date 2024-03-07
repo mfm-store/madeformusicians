@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { primaryTextColor, secondaryTextColor } from '../config/theme';
 import Image from 'next/image';
 
@@ -46,8 +47,8 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-600">Join our community on Instagram:</p>
-          <a href="#" className={`${secondaryTextColor} font-semibold hover:underline`}>Instagram</a>
+          <p className="text-lg text-gray-600">Join our community on</p>
+          <a target='_blank' href="https://www.instagram.com/madeformusicians" className={`${secondaryTextColor} font-semibold hover:underline`}>Instagram</a>
           <div className="mt-8">
             <p className="text-lg text-gray-600">For any inquiries or assistance, please contact us:</p>
             <p className={`text-lg ${secondaryTextColor} font-semibold mt-2`}>madeformusicians@gmail.com</p>
