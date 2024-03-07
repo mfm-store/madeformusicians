@@ -5,7 +5,7 @@ import variantStraps from './straps'
 
 const products = [
   {
-    id: 123,
+    id: 'capo-steel',
     name: 'Guitar Capo Heavy duty (Metal) with Pin Remover',
     price: '329',
     description: `
@@ -14,16 +14,17 @@ const products = [
           <li><strong>Capo works on acoustic guitar, electric guitar, mandolin, banjo, ukulele, folk Guitars and mandolin</strong></li>
           <li><strong>CAN IT BE USED for YOUR INSTRUMENT</strong> - Obviously; this Capo Work Perfectly with Your Instrument.Guitar Capo is Suitable for ACOUSTIC or ELECTRIC GUITARS; UKULELE; BANJO; MANDOLIN</li>`,
     imageUrl: '/products/capo/silver.jpeg',
-    secondaryImageUrls: ['/products/capo/black.jpeg', '/products/capo/grey.jpeg', '/products/capo/gold.jpeg'],
+    secondaryImageUrls: [],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
     rank: 1,
     productGroudId: 'capo-123',
     category: CATEGORIES.CAPOS,
     variants: variantCapos,
-    defaultVariant: 'silver'
+    defaultVariant: 'silver',
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
   },
   {
-    id: 456,
+    id: 'kalimba',
     name: 'Kalimba',
     price: '849',
     description: `<li>Kalimba Thumb Piano 17 Keys Finger Piano</li>
@@ -37,10 +38,12 @@ const products = [
     rank: 2,
     category: CATEGORIES.TUNERS,
     variants: variantKalimba,
-    defaultVariant: 'deer'
+    defaultVariant: 'deer',
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
+
   },
   {
-    id: 123213,
+    id: 'strap-woven',
     name: 'Adjustable Woven Guitar Strap Retro Style / Electric Guitar Strap / Electric Guitar Strap / Guitar Player Gift / Bass Guitar Strap',
     price: '999',
     description: `Size: 5*149cm
@@ -71,9 +74,11 @@ const products = [
     category: CATEGORIES.PICKS,
     defaultVariant: 'red',
     variants: variantStraps,
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
+
   },
   {
-    id: 234234,
+    id: 'cutter-winder',
     name: 'String Cutter Winder',
     price: '249',
     description: 'String Cutter Winder',
@@ -84,7 +89,7 @@ const products = [
     category: CATEGORIES.STRING_WINDER_CUTTER,
   },
   {
-    id: 43534534,
+    id: 'tuner',
     name: 'Guitar Tuners',
     price: '299',
     description: `<li>Screen: LCD display.</li>
@@ -96,9 +101,10 @@ const products = [
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
     rank: 5,
     category: CATEGORIES.TUNERS,
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
   },
   {
-    id: 234555,
+    id: 'strings',
     name: 'Guitar Strings',
     price: '299',
     description: `<li>Acoustic Guitar Strings- Made With Highest Quality Phosphor Bronze Wound</li>
@@ -110,6 +116,8 @@ const products = [
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
     rank: 6,
     category: CATEGORIES.STRINGS,
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
+
   }
 ];
 

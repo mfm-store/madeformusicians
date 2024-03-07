@@ -17,15 +17,14 @@ const Nav = () => {
 
   return (
     <>
-
-      <div className='flex my-2 ml-2'>
+      <Link className='flex my-2 ml-2' href="/">
         <div className='w-10 h-10 relative'>
           <Image src='/mfmlogo.jpeg' fill className='rounded-full  py-xs' sizes="50px,50px" />
         </div>
         <div className='font-bold text-2xl ml-4 flex items-center'>
           Made for Musicians
         </div>
-      </div>
+      </Link>
       <nav className={`${primaryColor} ${textColor} tracking-wide`}>
         <div className="container flex items-center">
           <Link href="/" className={`${!isActive('/') && hoverTertiaryTextColor} text-xl p-4 ${isActive('/') && activeClassName}`}>

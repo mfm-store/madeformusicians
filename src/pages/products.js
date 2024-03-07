@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import products from "../config/products";
@@ -16,6 +16,12 @@ const Products = () => {
   const onCardClick = (id) => {
     router.push(`/product/${id}`);
   };
+
+  useEffect(() => {
+    products.forEach((product) => {
+      router.prefetch(`/product/${product.id}`);
+    });
+  }, [router]);
 
   return (
     <div className={`${backgroundColor} p-4 lg:p-8`}>
@@ -35,11 +41,11 @@ const Products = () => {
                 src={product.imageUrl}
                 alt={product.name}
                 className="mb-4 object-cover"
-                sizes="310px,160px"
+                sizes="210px,100px"
               />
             </div>
             <p className={`${cardTitleColor} mb-2`}>{product.name}</p>
-            <p className={textColor}>{product.price}</p>
+            <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{product?.price} <span className='font-normal text-[12px]'>(includes shipping)</span></p>
           </div>
         ))}
       </div>

@@ -51,7 +51,7 @@ const WelcomeComponent = () => {
       {isHydrated && (
         <Slider ref={carouselRef} {...carouselSettings}>
           <div className="relative">
-            <Image fill src="/banner/accesories.jpg" />
+            <img fill src="/banner/accesories.jpg" />
             <div className={`absolute inset-0 opacity-30 ${primaryColor}`}></div>
           </div>
           <div className="relative">

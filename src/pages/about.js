@@ -1,5 +1,6 @@
 import React from 'react';
 import { primaryTextColor, secondaryTextColor } from '../config/theme';
+import Image from 'next/image';
 
 // Define primary color variable
 const primaryColor = primaryTextColor;
@@ -19,17 +20,28 @@ const AboutUs = () => {
         </div>
         <div className="mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">What Sets Us Apart</h3>
-              <p className="text-gray-600">What sets <span className={`${secondaryTextColor} font-bold`}>Website Name</span> apart from other music instrument retailers is our unwavering commitment to offering only the finest and most distinctive accessories on the market.</p>
-            </div>
+
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Meet the Owner</h3>
-              <p className="text-gray-600">Deepanshu Batra, is not only a seasoned software engineer but also a passionate musician with a deep love for music instruments.</p>
+              <div className='w-40 h-40 relative rounded-full border-solid border-red-400 border mb-2'>
+                <Image src="/aboutus/owner.jpeg" fill className='rounded-full' sizes='100px,100px' />
+              </div>
+              <p>
+                Hello, I'm <b>Deepanshu Batra</b>, a software engineer by profession and a passionate musician at heart.
+                By day, I dive into the world of coding, but by night, I let the melodies of music guide me.
+                I'm excited to share with you my passion project—a venture aimed at enhancing the musical journey for enthusiasts like myself.
+              </p>
+              <a href="https://www.instagram.com/thepanshoe" target="_blank" rel="noopener noreferrer" className={`${secondaryTextColor} font-bold`}>
+                Instagram Profile
+              </a>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Us</h3>
-              <p className="text-gray-600">When you shop at <span className={`${secondaryTextColor} font-bold`}>Website Name</span>, you can trust that you're not just purchasing a product—you're investing in a piece of musical artistry that has been carefully selected for its quality and uniqueness.</p>
+              <ul className="text-gray-600 list-disc text-lg">
+                <li>Best Market Prices</li>
+                <li>Superior Quality Assurance</li>
+                <li>Exclusive Selections Uncommon Elsewhere</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -38,7 +50,8 @@ const AboutUs = () => {
           <a href="#" className={`${secondaryTextColor} font-semibold hover:underline`}>Instagram</a>
           <div className="mt-8">
             <p className="text-lg text-gray-600">For any inquiries or assistance, please contact us:</p>
-            <p className={`text-lg ${secondaryTextColor} font-semibold mt-2`}>contact@websitename.com</p>
+            <p className={`text-lg ${secondaryTextColor} font-semibold mt-2`}>madeformusicians@gmail.com</p>
+            <p className={`text-lg ${secondaryTextColor} font-semibold mt-2`}>WhatsApp: +91-9319905674</p>
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant })
   const router = useRouter();
   const queryParams = new URLSearchParams(router.query);
   const variantFromQueryParams = queryParams.get('variant') || defaultVariant;
+
   const handleClick = () => {
     // Construct new query parameter string
     const queryParams = new URLSearchParams(router.query);
@@ -26,16 +27,19 @@ const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant })
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
       <div className={`relative w-16 h-16 bg-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg hover:border border-gray-500 ${variantId === variantFromQueryParams ? 'border-[#DE9151] border' : ''}`} onClick={handleClick}>
-        <Image src={imageUrl} fill alt="Product Thumbnail" className="w-full h-full object-cover" sizes="120px,120px" />
+        <Image src={imageUrl} fill alt="Product Thumbnail" className="w-full h-full object-cover" sizes="60px,60px" />
       </div>
       <div className='text-black'>{variantLabel}</div>
     </div>
-
   );
 };
 
 const VariantThumbnails = ({ products, defaultVariant }) => {
-  debugger;
+  // useEffect(() => {
+  //   products.forEach(() => {
+  //     router.prefetch('/dashboard');
+  //   });
+  // }, [router]);
   return (
     <div className="flex overflow-x-auto space-x-4 p-4">
       {products.map((product, index) => (
@@ -92,22 +96,19 @@ const ProductPage = () => {
         <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{variant?.price || product?.price} <span className='font-normal text-2xs'>(includes shipping)</span></p>
         {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} /> : null}
         <ProductDescription description={product.description} />
-        {/* <ul className="text-gray-600 mb-4 flex flex-col list-disc" dangerouslySetInnerHTML={{ __html: product.description }} /> */}
-        {/* Buy on Instagram Button */}
 
-        <div className='flex flex-col space-y-2'>
-          <button
-            onClick={handleBuyOnInstagram}
-            className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor1} ${buttonHoverColor1}`}
-          >
-            Buy on Instagram
-          </button>
-
+        <div className='flex flex-col md:flex-col-reverse gap-3'>
           <button
             onClick={() => { handleSendWhatsappMessage() }}
             className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor2} ${buttonHoverColor2}`}
           >
             Buy on WhatsApp
+          </button>
+          <button
+            onClick={handleBuyOnInstagram}
+            className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor1} ${buttonHoverColor1}`}
+          >
+            Buy on Instagram
           </button>
         </div>
       </div>

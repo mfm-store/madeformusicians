@@ -22,7 +22,7 @@ const ImagesView = ({ product }) => {
       {/* Main Image */}
       <div className="flex-1 p-4">
         <div className="relative w-full h-0 pb-9/16 overflow-hidden rounded-md border border-gray-300 ">
-          <Image src={mainImage} fill alt={product.name} className="absolute inset-0 object-cover w-full h-full" />
+          <Image src={mainImage} fill alt={product.name} className="absolute inset-0 object-cover w-full h-full" sizes="(max-width: 768px) 220px, 220px; (max-width: 1800px) 420px, 420px" />
         </div>
       </div>
 
@@ -36,7 +36,7 @@ const ImagesView = ({ product }) => {
               alt={`Thumbnail ${index}`}
               className="w-full h-full object-cover cursor-pointer rounded-md border border-gray-300 hover:border-blue-500"
               onClick={() => handleThumbnailClick(thumbnailUrl)}
-              sizes='120px,120px'
+              sizes="60px,60px"
             />
           </div>
         ))}
