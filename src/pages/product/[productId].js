@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import products from '../../config/products';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
@@ -36,11 +37,6 @@ const VariantThumbnail = ({ imageUrl, variantId, variantLabel, defaultVariant, s
 };
 
 const VariantThumbnails = ({ products, defaultVariant, ...rest }) => {
-  // useEffect(() => {
-  //   products.forEach(() => {
-  //     router.prefetch('/dashboard');
-  //   });
-  // }, [router]);
   return (
     <div className="flex overflow-x-auto space-x-4 p-4">
       {products.map((product, index) => (
@@ -87,36 +83,45 @@ const ProductPage = () => {
   const imageLoadProps = { mainImageLoading: mainImageLoading, setMainImageLoading: setMainImageLoading };
 
   return (
-    <div className="flex flex-col lg:flex-row ">
-      {/* Left: Zoomable Image */}
+    <>
+      <Head>
+        <title>Music Instruments Accesories Store | {product.name}</title>
+        <meta name="description" content={product.shortDescription} />
+        <meta name="keywords" content="guitar capo, guitar straps, kalimba, guitar strings, guitar tuner, cool guitar capo, cool guitar straps, madeformusicians, made, for, musicians" />
+        <meta name="author" content="MadeForMusicians" />
+        <meta http-equiv="Content-Language" content="en" />
+      </Head>
+      <div className="flex flex-col lg:flex-row ">
+        {/* Left: Zoomable Image */}
 
-      <div className="flex-1 p-4">
-        <ImagesView product={variant || product} {...imageLoadProps} />
-      </div>
-
-      {/* Right: Product Details */}
-      <div className="flex-1 p-4">
-        <h1 className="text-2xl lg:text-4xl font-bold mb-4">{product.name}</h1>
-        <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{variant?.price || product?.price} <span className='font-normal text-2xs'>(includes shipping)</span></p>
-        {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} {...imageLoadProps} /> : null}
-        <ProductDescription description={product.description} />
-
-        <div className='flex flex-col md:flex-col-reverse gap-3'>
-          <button
-            onClick={() => { handleSendWhatsappMessage(product.id, variant) }}
-            className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor2} ${buttonHoverColor2}`}
-          >
-            Buy on WhatsApp
-          </button>
-          <button
-            onClick={handleBuyOnInstagram}
-            className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor1} ${buttonHoverColor1}`}
-          >
-            Buy on Instagram
-          </button>
+        <div className="flex-1 p-4">
+          <ImagesView product={variant || product} {...imageLoadProps} />
         </div>
-      </div>
-    </div >
+
+        {/* Right: Product Details */}
+        <div className="flex-1 p-4">
+          <h1 className="text-2xl lg:text-4xl font-bold mb-4">{product.name}</h1>
+          <p className="text-xl mb-2 text-green-600 font-bold">&#8377;{variant?.price || product?.price} <span className='font-normal text-2xs'>(includes shipping)</span></p>
+          {product.variants ? <VariantThumbnails products={product.variants} defaultVariant={product.defaultVariant} {...imageLoadProps} /> : null}
+          <ProductDescription description={product.description} />
+
+          <div className='flex flex-col md:flex-col-reverse gap-3'>
+            <button
+              onClick={() => { handleSendWhatsappMessage(product.id, variant) }}
+              className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor2} ${buttonHoverColor2}`}
+            >
+              Buy on WhatsApp
+            </button>
+            <button
+              onClick={handleBuyOnInstagram}
+              className={`text-white px-6 py-3 rounded-full font-bold ${buttonBackgroundColor1} ${buttonHoverColor1}`}
+            >
+              Buy on Instagram
+            </button>
+          </div>
+        </div>
+      </div >
+    </>
   );
 };
 

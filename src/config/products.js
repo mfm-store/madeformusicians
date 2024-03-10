@@ -8,6 +8,7 @@ const products = [
     id: 'capo-steel',
     name: 'Guitar Capo Heavy duty (Metal) with Pin Remover',
     price: '329',
+    shortDescription: 'Buy Good Quality Guitar Capos at affordable price',
     description: `
     <li><strong>This Capo is one of the Most Popular QUICK- CHANGE CAPO DESIGNS.</strong> Not only Quickly Change Between Frets; but also can Pull Out the String Nail More Easily</li>
           <li><strong>Guitar Capo Quick Change Acoustic Guitar Accessories</strong> With free 5pcs Guitar Picks</li>
@@ -27,6 +28,7 @@ const products = [
     id: 'kalimba',
     name: 'Kalimba',
     price: '849',
+    shortDescription: 'Buy Good Quality Kalimba at affordable price',
     description: `<li>Kalimba Thumb Piano 17 Keys Finger Piano</li>
     <li>Beautiful polishing natural wood grain piano paint luster smooth feel beautiful sound</li>
     <li>Engraved Notes Hand-rest Curve Design Bending Keys</li>
@@ -46,6 +48,7 @@ const products = [
     id: 'strap-woven',
     name: 'Adjustable Woven Guitar Strap Retro Style / Electric Guitar Strap / Electric Guitar Strap / Guitar Player Gift / Bass Guitar Strap',
     price: '999',
+    shortDescription: 'Buy Good Quality unique Guitar Straps at affordable price',
     description: `Size: 5*149cm
     <p>
     Brand new and high quality.
@@ -82,6 +85,7 @@ const products = [
     name: 'String Cutter Winder',
     price: '249',
     description: 'String Cutter Winder',
+    shortDescription: 'Buy Good Quality Guitar String Cutter Winder at affordable price',
     imageUrl: '/products/cutterWinder/1.jpeg',
     secondaryImageUrls: [],
     instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
@@ -92,6 +96,7 @@ const products = [
     id: 'tuner',
     name: 'Guitar Tuners',
     price: '299',
+    shortDescription: 'Buy Good Quality Guitar Tuners at affordable price',
     description: `<li>Screen: LCD display.</li>
     <li>Tuning type: Guitar, Chromatic, Bass, Violin, Ukulele.</li>
     <li>A4 range: 430Hz--450Hz.</li>
@@ -107,6 +112,7 @@ const products = [
     id: 'strings',
     name: 'Guitar Strings',
     price: '299',
+    shortDescription: 'Buy Good Quality Guitar Strings at affordable price',
     description: `<li>Acoustic Guitar Strings- Made With Highest Quality Phosphor Bronze Wound</li>
     <li>It Owns The Deep & Steady Bass, Clear & Melodious Trebie.</li>
     <li>This Series Have 4 Tensions Which Can Satisfy Defferent Playing Requirements.</li>
