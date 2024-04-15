@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <>
       <Head>
-        <title>Music Instruments Accesories Store | Guitar Capo | Guitar Straps | kalimba | Made For Musicians</title>
+        <title>Get Best Guitar Accessories | Guitar Capo, Straps, kalimba etc </title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content="guitar capo, guitar straps, kalimba, guitar strings, guitar tuner, cool guitar capo, cool guitar straps, madeformusicians, made, for, musicians" />
         <meta name="author" content="MadeForMusicians" />

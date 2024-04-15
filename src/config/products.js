@@ -5,6 +5,25 @@ import variantStraps from './straps'
 
 const products = [
   {
+    id: 'accessory-kit',
+    name: 'Guitar Accesory Kit (String, Capo, String Cutter Winder, Tuner)',
+    price: '899',
+    shortDescription: 'Buy Good Quality Guitar Capos at affordable price',
+    description: `<p>This kit includes everything you need to keep your guitar sounding great:</p><ul>
+  <li><strong>Custom Light Strings:</strong> Phosphor bronze strings from Kaspar for a clear and vibrant tone.</li>
+  <li><strong>Metal Guitar Capo:</strong> Durable metal capo for easy key changes without affecting tuning.</li>
+  <li><strong>String Cutter Winder:</strong> Convenient tool for trimming excess string length and winding new strings.</li>
+  <li><strong>Tuner:</strong> Keep your guitar perfectly in tune with this handy tuner.</li>
+</ul>`,
+    imageUrl: '/products/kit/1.jpeg',
+    secondaryImageUrls: ['/products/kit/2.jpeg', '/products/kit/3.jpeg', '/products/capo/silver.jpeg', '/products/cutterWinder/1.jpeg', '/products/tuners/1.jpeg', '/products/strings/1.jpeg'],
+    instagramUrl: 'https://www.instagram.com/direct/t/101734417898343/',
+    rank: 1,
+    productGroudId: 'capo-123',
+    category: CATEGORIES.KIT,
+    instagramUrl: 'https://www.instagram.com/madeformusicians.musicstore',
+  },
+  {
     id: 'capo-steel',
     name: 'Guitar Capo Heavy duty (Metal) with Pin Remover',
     price: '329',
